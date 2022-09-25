@@ -6,7 +6,7 @@ def Fibo(n):
         return 1
 
     else:
-        return Fibo(n-2) + Fibo(n-1)        #recursion step using the two base cases
+        return Fibo(n-2) + Fibo(n-1)        #recurrsion step using the two base cases
 
 for i in range(1, 14): 
     print(Fibo(i))          #print 1st 13 fibonacci numbers
