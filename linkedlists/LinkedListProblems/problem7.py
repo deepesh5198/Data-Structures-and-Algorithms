@@ -1,4 +1,7 @@
-# a code to implement singly linked list
+# problem 7: Reverse list using recursion
+
+from typing_extensions import Self
+
 
 class Node:
     def __init__(self, data):
@@ -118,6 +121,19 @@ class SLinkedList:
                 del current                     #delete current node
                 self.length -= 1                #decreament length by one
 
+    def reverseitrecursively(self, n):
+        if n != None:
+            right = n.next
+            if self.head != n:
+                n.next = self.head
+                self.head = n
+
+            else:
+                n.next = None
+
+            self.reverseitrecursively(right)
+        
+
     def listlength(self):
         """calculates the length of the linked list"""
 
@@ -142,20 +158,4 @@ list.insert_at_beg(23)
 list.insert_at_beg(25)
 list.insert_at_beg(36)
 list.printlist()
-list.delete_from_end()
-list.delete_from_end()
-list.delete_from_end()
-list.printlist()
-list.insert_at(0,55)
-list.insert_at(0,50)
-list.insert_at(2,60)
-list.insert_at(3,20)
-list.printlist()
-print(list.length)
-list.printlist()
-list.insert_at(2,200)
-list.printlist()
-list.delete_at(2)
-list.printlist()
-list.delete_at(2)
-list.printlist()
+list.reverseitrecursively(list.head)

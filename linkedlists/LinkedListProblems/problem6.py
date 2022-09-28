@@ -1,3 +1,5 @@
+#Problem: insert an element in a sorted linked list
+
 # a code to implement singly linked list
 
 class Node:
@@ -26,16 +28,17 @@ class SLinkedList:
         
         #if list is empty, that is Head is None
         if self.head == None:           #if head is None
-            newNode.next= self.head
+            newNode.next = self.head
             self.head = newNode         #make newNode as HEAD
-            self.length +=1
+            self.length+=1
+
         #else traverse to the very last node and set its next as newNode
         else:
-            last = self.head            #initialize last as head
-            while last.next != None:    #check last.next is None, if its None break the loop
-                last = last.next        #update last to next
-
-            last.next = newNode             #when last.next == None, set last.next as newNode
+            current = self.head            #initialize last as head
+            while current.next != None:    #check last.next is None, if its None break the loop
+                current = current.next        #update last to next
+            
+            current.next = newNode             #when last.next == None, set last.next as newNode
             self.length +=1
 
     def insert_at(self,pos,newdata):
@@ -137,25 +140,31 @@ class SLinkedList:
             print(current.data)         #print the data in the node
             current = current.next      #update node to next node
 
+    def insert_inorder(self,data):
+        #inserts the data in order
+        newNode = Node(data)
+        if self.head == None:
+            self.insert_at_beg(data)
+
+        else:
+            current = self.head
+            prev = None
+            stop = False
+            while current != None and not stop:
+                if current.data > data:
+                    stop = True
+                else:
+                    prev = current
+                    current = current.next
+            newNode.next = current
+            prev.next = newNode
+                
+            self.length +=1
+            
 list = SLinkedList()
-list.insert_at_beg(23)
-list.insert_at_beg(25)
-list.insert_at_beg(36)
+print(list.head)
+
 list.printlist()
-list.delete_from_end()
-list.delete_from_end()
-list.delete_from_end()
-list.printlist()
-list.insert_at(0,55)
-list.insert_at(0,50)
-list.insert_at(2,60)
-list.insert_at(3,20)
-list.printlist()
-print(list.length)
-list.printlist()
-list.insert_at(2,200)
-list.printlist()
-list.delete_at(2)
-list.printlist()
-list.delete_at(2)
+print("-"*80)
+list.insert_inorder(60)
 list.printlist()
