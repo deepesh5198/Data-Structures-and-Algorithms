@@ -8,6 +8,9 @@ class Stack:
     def isempty(self):
         return len(self.stck)<=0
 
+    def isfull(self):
+        return len(self.stck) == self.limit
+
     def push(self, item):
         if len(self.stck) >= self.limit:
             print("stack overflow!")

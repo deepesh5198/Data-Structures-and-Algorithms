@@ -163,7 +163,14 @@ class SLinkedList:
             
 list = SLinkedList()
 print(list.head)
-
+list.insert_at_end(20)
+list.insert_at_end(30)
+list.insert_at_end(40)
+list.insert_at_end(50)
+list.insert_at_end(70)
+list.insert_at_end(80)
+list.insert_at_end(90)
+list.insert_at_end(100)
 list.printlist()
 print("-"*80)
 list.insert_inorder(60)
