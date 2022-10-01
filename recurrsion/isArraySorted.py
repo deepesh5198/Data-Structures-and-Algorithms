@@ -1,11 +1,13 @@
 #checks if given array is sorted
 def isArraySorted(array):
     #base case if array is of len 1 it is sorted
-    if len(array) == 1:
+    if len(array) == 1:                         #if array converges till last element
         return True
     
     else:
-        return array[0]<=array[1] and isArraySorted(array[1:])
+        return array[0]<=array[1] and isArraySorted(array[1:])          #check a[0]<=a[1]   and send a[1:] to func()
+                                                                    #eg: [12,13,15,17]    and   send [13,15,17] to func()
+                                                                    #       True          and   recurrsion     
 
 array = [12,13,15,17,176,245]
 print(isArraySorted(array))

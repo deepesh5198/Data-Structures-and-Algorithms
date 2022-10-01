@@ -11,14 +11,15 @@ def evaluate_postfix(input):
         if char in """0123456789""":
             stack.append(char)
         else:
-            if char in """"+_*/'""":
-                a = stack[-1]
-                stack.pop()
+            if char in """+-*/""":
                 b = stack[-1]
                 stack.pop()
+                a = stack[-1]
+                stack.pop()
+                
                 stack.append(solveit(a,b,char))
                 print(stack)
-                continue
+
             else:
                 continue
 
