@@ -34,12 +34,14 @@ def floorinBST(root, data):
 
         elif data < root.data:
             return floorinBST(root.left, data)
-
-        floor = floorinBST(root.right, data)
-        if floor <= data:
-            return floor
-        else: 
-            return data
+        
+        else:
+            floor = floorinBST(root.right, data)
+            floor = root.data
+            if floor <= data:
+                return floor
+            else: 
+                return data
 
 
 print(floorinBST(root,5))

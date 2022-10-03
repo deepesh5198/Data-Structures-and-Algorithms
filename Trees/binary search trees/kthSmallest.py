@@ -17,7 +17,7 @@ root.right.left.right = BSTNode(13)
 count = 0 
 def kthSmallestinBST(root, k): 
     global count 
-    if(not root): 
+    if not root: 
         return None; 
     else:
         left = kthSmallestinBST(root.left, k) 

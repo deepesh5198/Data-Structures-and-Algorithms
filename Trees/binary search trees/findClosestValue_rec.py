@@ -1,27 +1,6 @@
 #Recursive approach for finding the element from BST that is closest to the given key
 #Time complexity = O(logn), because it only searches the half of the tree
 
-class Queue:
-    def __init__(self):
-        self.que = []
-        self.size = 0
-
-    def enqueue(self, item):
-        self.que.append(item)
-        self.size +=1
-
-    def dequeue(self):
-        if self.size <= 0:
-            print("Queue Underflow!")
-
-        else:
-            item = self.que[0]
-            self.que.remove(item)
-            self.size -=1
-            return item
-
-    def show_queue(self):
-        print(self.que)
 
 class BSTNode:
     def __init__(self, data):
@@ -77,4 +56,4 @@ def findClosest(root, key):
                 return temp
 
 
-print(findClosest(root, 16).data)
+print(findClosest(root, 5).data)

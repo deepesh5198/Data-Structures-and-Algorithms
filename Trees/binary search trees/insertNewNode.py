@@ -1,4 +1,4 @@
-#given a BST insert and element such that it satisfies the BST
+#given a BST insert the given Node such that it satisfies the BST
 
 class BSTNode:
     def __init__(self, data):

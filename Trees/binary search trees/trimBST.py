@@ -55,4 +55,3 @@ def trimthisBST(root, a, b):
 
 newroot = trimthisBST(root, 3,10)
 traverseInorder(newroot)
-print(newroot.left.data)

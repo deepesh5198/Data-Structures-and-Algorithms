@@ -1,6 +1,3 @@
-from unittest import result
-
-
 class BSTNode:
     def __init__(self, data = None):
         self.data = data
@@ -29,7 +26,7 @@ def array_to_BST(A, first_indx, last_indx):
 
         return newNode
 
-A = [1,2,3,4,5,6]
+A = [1,2,3,4,5,6,7]
 root = array_to_BST(A, 0, len(A)-1)
 
 result = []

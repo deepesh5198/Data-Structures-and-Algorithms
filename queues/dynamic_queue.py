@@ -1,10 +1,5 @@
 # Implementation of dynamic queue using array
 
-from xml.etree.ElementInclude import LimitedRecursiveIncludeError
-
-from matplotlib.widgets import EllipseSelector
-from numpy import size
-
 
 class DyQueue:
     def __init__(self, limit = 5):
