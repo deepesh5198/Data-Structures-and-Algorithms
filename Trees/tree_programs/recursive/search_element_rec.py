@@ -40,14 +40,10 @@ root.left.left.right = Tree(70)
 def searchRecursive(node, element):
     if not node:
         return 0
-    elif node.data == element:
+    if node.data == element:
         return 1
-
     else:
-        temp = searchRecursive(node.left, element)
-        if temp == element:
-            return temp
-        else:
-            return searchRecursive(node.right, element)
+        return searchRecursive(node.left, element) or searchRecursive(node.right, element)
 
-print(searchRecursive(root, 35))
+
+print(searchRecursive(root, 80))

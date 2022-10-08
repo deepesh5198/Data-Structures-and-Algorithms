@@ -1,9 +1,6 @@
 #problem 4: given a queue of element divide it into 2 queues and then dequeue elements from each queue alternatively
 #and store elements in a new queue
 
-from itertools import pairwise
-
-
 class Queue:
     def __init__(self):
         self.que = []

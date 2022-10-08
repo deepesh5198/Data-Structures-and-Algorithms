@@ -121,18 +121,18 @@ class SLinkedList:
                 del current                     #delete current node
                 self.length -= 1                #decreament length by one
 
-    def reverseitrecursively(self, n):
-        if n != None:
-            right = n.next
-            if self.head != n:
-                n.next = self.head
-                self.head = n
+    def reverseitrecursively(self, list_head):
+        if list_head != None:
+            right = list_head.next
+            if self.head != list_head:
+                list_head.next = self.head
+                self.head = list_head
 
             else:
-                n.next = None
+                list_head.next = None
 
             self.reverseitrecursively(right)
-        
+
 
     def listlength(self):
         """calculates the length of the linked list"""
@@ -159,3 +159,5 @@ list.insert_at_beg(25)
 list.insert_at_beg(36)
 list.printlist()
 list.reverseitrecursively(list.head)
+print("_"*90)
+list.printlist()

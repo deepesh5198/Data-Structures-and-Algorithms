@@ -16,6 +16,7 @@ def checkpalindrome(input):
         else:
             palindrome = False
             break
+    print(stack)
     
     if palindrome == True:
         print("Palindrome")

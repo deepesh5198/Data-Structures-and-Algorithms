@@ -21,8 +21,11 @@ root.left.left.right = Tree(70)
 maxdata = float("-inf")
 def maxData_rec(node): 
     global maxdata
+    #base case
     if not node:
         return maxdata
+
+    #recursion case
     else:
         if node.data > maxdata:
             maxdata = node.data

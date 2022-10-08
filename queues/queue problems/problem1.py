@@ -84,8 +84,7 @@ class LLQueue:
             del current
 
             for _ in range(len(stack)):
-                self.enqueue(stack[-1])
-                stack.pop()
+                self.enqueue(stack.pop())
         return self.printqueue()
 
 

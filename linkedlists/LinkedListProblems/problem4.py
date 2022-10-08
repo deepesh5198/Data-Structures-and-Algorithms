@@ -145,6 +145,7 @@ class SLinkedList:
         else:
             head = list_head
             tail = list_head.next
+            
             self.print_list_from_end(tail)
             print(head.data)
 
@@ -157,3 +158,31 @@ list.insert_at_beg(69)
 list.printlist()
 print("-"*80)
 list.print_list_from_end(list.head)
+
+def reverse(self):
+    if self.head == None:
+        print("list is empty")
+
+    elif self.head.next == None:
+        print(self.head.data)
+        return
+    else:
+        last = None
+        current = self.head
+        while current!=None:
+            nextnode = current.next
+            current.next = last
+            last = current
+            current.next = nextnode
+
+def printfromend(self, head_ref):
+    if head_ref == None:
+        print("list is empty")
+
+    elif head_ref.next == None:
+        print(head_ref.data)
+    else:
+        head = head_ref
+        tail = head_ref.next
+        self.prinfromend(tail)
+        print(head.data)

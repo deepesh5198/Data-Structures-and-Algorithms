@@ -12,10 +12,8 @@ def evaluate_postfix(input):
             stack.append(char)
         else:
             if char in """+-*/""":
-                b = stack[-1]
-                stack.pop()
-                a = stack[-1]
-                stack.pop()
+                b = stack.pop()
+                a = stack.pop()
                 
                 stack.append(solveit(a,b,char))
                 print(stack)

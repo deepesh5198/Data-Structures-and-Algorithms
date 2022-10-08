@@ -21,5 +21,5 @@ def replace_element(stack):
 
     return stack
 
-result = replace_element([10])
+result = replace_element([1,2,3,4,5,10])
 print(result)

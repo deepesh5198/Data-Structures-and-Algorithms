@@ -141,6 +141,7 @@ class SLinkedList:
             current = current.next      #update node to next node
 
     def insert_inorder(self,data):
+        """Book Method"""
         #inserts the data in order
         newNode = Node(data)
         if self.head == None:
@@ -161,6 +162,24 @@ class SLinkedList:
                 
             self.length +=1
             
+    def insert_in_order(self, el):
+        """My method: traverse till the current.data < data, and hold the previous node too"""
+        newNode = Node(el)
+        if self.head == None:
+            newNode.next = self.head
+            self.head = newNode
+        
+        else:
+            current = self.head
+            prev = None
+            while current.data < el:
+                prev = current
+                current = current.next
+            prev.next = newNode
+            newNode.next = current
+            self.length +=1
+            return
+
 list = SLinkedList()
 print(list.head)
 list.insert_at_end(20)
@@ -173,5 +192,5 @@ list.insert_at_end(90)
 list.insert_at_end(100)
 list.printlist()
 print("-"*80)
-list.insert_inorder(60)
+list.insert_in_order(60)
 list.printlist()
