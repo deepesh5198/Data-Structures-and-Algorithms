@@ -6,15 +6,15 @@ list2 = SLinkedList()
 list1.insert_at_end(1)
 list1.insert_at_end(3)
 list1.insert_at_end(5)
+list1.insert_at_end(6)
 list1.insert_at_end(7)
-list1.insert_at_end(9)
-list1.insert_at_end(11)
+list1.insert_at_end(8)
 
 list2.insert_at_end(2)
 list2.insert_at_end(4)
-list2.insert_at_end(6)
-list2.insert_at_end(8)
+list2.insert_at_end(9)
 list2.insert_at_end(10)
+list2.insert_at_end(11)
 list2.insert_at_end(12)
 
 
@@ -49,13 +49,20 @@ def merge_Ordered(list1 , list2):
 
             #shift head2 to its next node
             head2 = head2.next
+            
     if head1:
-        list3.insert_at_end(head1.data)
+        while head1:
+            temp = head1.data
+            list3.insert_at_end(temp)
+            head1 = head1.next
+        return list3
+
     if head2:
-        list3.insert_at_end(head2.data)
-
-
-    return list3
+        while head2:
+            temp = head2.data
+            list3.insert_at_end(temp)
+            head2 = head2.next
+        return list3
 
 list3 = merge_Ordered(list1, list2)
 list3.printlist()
